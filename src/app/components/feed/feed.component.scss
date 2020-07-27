@@ -1,0 +1,51 @@
+.feed-container {
+  width: 99%;
+  margin: auto;
+
+  .mat-table {
+    width: 100%;
+  }
+
+  .mat-header-row {
+    height: auto;
+    line-height: 3;
+    background: darkorange;
+  }
+
+  .mat-header-cell {
+    color: white;
+  }
+
+  .mat-row:nth-child(even) {
+    background: whitesmoke;
+  }
+
+  .mat-row {
+    height: auto;
+    line-height: 3;
+  }
+
+  .mat-toolbar-single-row {
+    height: auto;
+    background-color: white;
+    color: darkorange;
+  }
+
+  .mat-paginator {
+    display: none;
+  }
+
+  .subtle-text {
+    color: #bfbfbf;
+    font-size: smaller;
+    font-weight: 500;
+  }
+
+  .small-text {
+    font-size: smaller;
+  }
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
