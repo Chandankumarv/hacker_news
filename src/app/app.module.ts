@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { NewsComponent } from './pages/news/news.component';
 import { FeedComponent } from './components/feed/feed.component';
+import {ChartModule} from './modules/chart/chart.module';
 
 @NgModule({
   declarations: [
@@ -21,17 +22,18 @@ import { FeedComponent } from './components/feed/feed.component';
     NewsComponent,
     FeedComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        ChartModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

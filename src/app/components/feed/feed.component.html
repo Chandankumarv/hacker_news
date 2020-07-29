@@ -1,32 +1,36 @@
 <div class="feed-container mat-elevation-z2">
-  <table mat-table [dataSource]="dataSource" matSort>
+  <table mat-table [dataSource]="dataSource">
 
     <!-- ID Column -->
     <ng-container matColumnDef="comments">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Comments </th>
+      <th mat-header-cell *matHeaderCellDef> Comments </th>
       <td mat-cell *matCellDef="let row"> {{row?.num_comments}} </td>
     </ng-container>
 
     <!-- Progress Column -->
     <ng-container matColumnDef="voteCount">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Vote Count </th>
+      <th mat-header-cell *matHeaderCellDef> Vote Count </th>
       <td mat-cell *matCellDef="let row"> {{row?.points}} </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="upVotes">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Up Vote </th>
-      <td mat-cell *matCellDef="let row"> <button mat-icon-button><mat-icon>arrow_drop_up</mat-icon></button> </td>
+      <th mat-header-cell *matHeaderCellDef> Up Vote </th>
+      <td mat-cell *matCellDef="let row; index as currentIndex">
+        <button mat-icon-button (click)="upVote(row, currentIndex)">
+          <mat-icon>arrow_drop_up</mat-icon>
+        </button>
+      </td>
     </ng-container>
 
     <!-- Color Column -->
     <ng-container matColumnDef="newsDetails">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> News Details </th>
-      <td mat-cell *matCellDef="let row">
+      <th mat-header-cell *matHeaderCellDef> News Details </th>
+      <td mat-cell *matCellDef="let row; index as currentIndex">
         <span>{{row?.title}}</span>
         <span class="subtle-text"> by </span> {{row?.author}}
         <span class="subtle-text">{{getTimeDiffFromNow(row?.created_at_i)}} hours ago</span>
-        <button class="small-text" mat-button>[ Hide ]</button>
+        <button class="small-text" mat-button (click)="hideStory(row, currentIndex)">[ Hide ]</button>
       </td>
     </ng-container>
 
@@ -48,5 +52,8 @@
   </mat-toolbar>
   <mat-paginator #paginator [pageSizeOptions]="[20, 50, 100]" (page)="onPageEvent($event)">
   </mat-paginator>
-
+  <section class="chart-section">
+    <app-line-chart [xAxis]="storyIds" [yAxis]="points"></app-line-chart>
+  </section>
 </div>
+
