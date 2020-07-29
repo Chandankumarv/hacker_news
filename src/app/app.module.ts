@@ -23,7 +23,7 @@ import {ChartModule} from './modules/chart/chart.module';
     FeedComponent
   ],
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({ appId: 'serverApp' }),
         AppRoutingModule,
         BrowserAnimationsModule,
         HttpClientModule,

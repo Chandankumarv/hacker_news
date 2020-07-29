@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$hacker-news-primary: mat-palette($mat-orange);
+$hacker-news-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$hacker-news-warn: mat-palette($mat-red);
+
+$hacker-news-theme: mat-light-theme($hacker-news-primary, $hacker-news-accent, $hacker-news-warn);
+
+@include angular-material-theme($hacker-news-theme);
+
