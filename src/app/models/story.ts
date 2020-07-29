@@ -12,7 +12,7 @@ export interface Story {
   story_url: string;
   parent_id: string;
   created_at_i: number;
-  relevancy_score: number;
+  relevancy_score?: number;
   _tags: string[];
   objectID: string;
 }
