@@ -8,7 +8,6 @@ FROM node:12
 WORKDIR /opt/mount1/hacker_news
 COPY --from=builder /opt/mount1/build/hacker_news/dist ./dist/
 COPY --from=builder /opt/mount1/build/hacker_news/package*.json ./
-RUN ls -l
 EXPOSE 4000
 
 CMD ["npm", "run", "serve:ssr"]
