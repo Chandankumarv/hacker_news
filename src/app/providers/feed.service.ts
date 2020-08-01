@@ -15,7 +15,7 @@ export class FeedService {
 
   getNews(filter: string = '', pageNo: number = 1, pageSize: number = 20): Observable<SearchResult> {
     return this.http
-      .get(`http://hn.algolia.com/api/v1/search?tags=story&query=${filter}&page=${pageNo}&hitsPerPage=${pageSize}`)
+      .get(`https://hn.algolia.com/api/v1/search?tags=story&query=${filter}&page=${pageNo}&hitsPerPage=${pageSize}`)
       .pipe(map(response => {
         let finalList = [];
         response.hits.forEach((story: Story, index: number) => {
