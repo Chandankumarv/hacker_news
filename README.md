@@ -1,27 +1,27 @@
-# HackerNews
+# Chandan Hacker News
+## Tech Stack
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+1. Angular v9
+2. Nodejs (SSR Express engine) - Express engine provided by angular for Server side rendering
+3. Docker - Containerisation
+4. Jenkins - CI/CD Setup
+5. Testing - Karma, Jasmine integrated with Angular CLI
 
-## Development server
+## Approach
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. Used Angular CLI for base code setup
+2. Used Angular material for UI components
+3. Created the below components in the order mentioned
+    1. Created the table
+    2. Created the news page
+    3. Added the route for news page
+    4. Created the adapter service for http client
+    5. Created the feed service for news API interaction
+    6. Created the models for News API response and Story
+    7. Implemented the table and mapped the API response
+ 4. Created Chart component and integrated Chartjs
+ 5. Added upvote and hide functionality
+ 6. Added SSR using Angular CLI and optimised SEO and performance issues
+ 7. Fixed broken test cases and added test case for Search API
+ 8. Added dockerisation
+ 9. Used Jenkins and created Jenkinsfile for CI/CD Setup
