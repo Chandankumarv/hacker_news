@@ -15,12 +15,14 @@ import { AppComponent } from './app.component';
 import { NewsComponent } from './pages/news/news.component';
 import { FeedComponent } from './components/feed/feed.component';
 import {ChartModule} from './modules/chart/chart.module';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewsComponent,
-    FeedComponent
+    FeedComponent,
+    NotFoundComponent
   ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'serverApp' }),
